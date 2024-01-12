@@ -1,9 +1,17 @@
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, useEffect } from "react";
 import axios from "axios";
 
-const Uploadform = () => {
+interface UploadFormProps {
+  accessToken: string
+}
+
+const Uploadform: React.FC<UploadFormProps> = ({accessToken}) => {
     const [image, setImage] = useState(null);
     const [oddType, setOddType] = useState("");
+    useEffect(() => {
+      setOddType("two odds")
+    }, [])
+  
 
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length > 0 ) {
@@ -27,9 +35,11 @@ const Uploadform = () => {
       const response = await axios.post('http://localhost:5000/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
+          'Authorization': `Bearer ${accessToken}`
         },
       });
       console.log(response.data);
+      
     } catch (error) {
       console.log(error.message);
     }

@@ -1,4 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+import GetOddsBtn from "./GetOddsBtn";
+import Uploadform from "./Uploadform";
+
 import axios from "axios";
 
 type Data = {
@@ -9,6 +12,7 @@ type Data = {
 const SignInForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+      const [token, setToken] = useState("");
 
     const handleEmailChange = (evt: ChangeEvent<HTMLInputElement>) => {
         setEmail(evt.target.value)
@@ -33,6 +37,7 @@ const SignInForm = () => {
                 }
             });
             console.log(response.data); // Assuming you want to access the response data
+            setToken(response.data?.token)
         } catch (err) {
             console.error(err);
         }
@@ -48,6 +53,8 @@ const SignInForm = () => {
                 <button>Sign in</button>
                 <p>Dont have an account ? <a>sign up</a></p>
             </form>
+            <Uploadform accessToken={token} />
+            <GetOddsBtn accessToken={token} />
         </div>
     )
 }
