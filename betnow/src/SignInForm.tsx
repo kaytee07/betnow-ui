@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import GetOddsBtn from "./GetOddsBtn";
 import Uploadform from "./Uploadform";
+import BuyOddsBtns from "./BuyOddsBtns";
 
 import axios from "axios";
 
@@ -55,6 +56,7 @@ const SignInForm = () => {
             </form>
             <Uploadform accessToken={token} />
             <GetOddsBtn accessToken={token} />
+            <BuyOddsBtns />
         </div>
     )
 }

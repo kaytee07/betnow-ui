@@ -1,35 +1,65 @@
 import axios from "axios";
-import React from "react";
-
-interface UploadFormProps {
-  accessToken: string
-}
+import { useState, useEffect } from "react";
 
 
-const BuyOddsBtns: React.FC<UploadFormProps> = ({accessToken}) => {
+
+
+const BuyOddsBtns = () => {
+    const [redirectUrl, setRedirectUrl] = useState(null);
+    
 
     const BuyFiveOdds = async () => {
-        const getFiveOdds = await axios.get('http://localhost:5000/api/fiveodds', {
-        headers: {
-          'Authorization': `Bearer ${accessToken}`
+        try {
+            const response = await axios.get('http://localhost:5000/api/buyfiveodds');
+            if (response.data.authorization_url) {
+                const { authorization_url } = response.data;
+                setRedirectUrl(authorization_url);
+            } else {
+                console.error({error: "authorization url not present"})
+            }
+            
+        } catch (err) {
+            console.error(err)
         }
-    });
-        console.log(getFiveOdds);
+        
     }
 
+
     const BuyTwoOdds = async () => {
-        const getTwoOdds = await axios.get('http://localhost:5000/api/twoodds');
-        console.log(getTwoOdds);
+        try {
+            const response = await axios.get('http://localhost:5000/api/buytwoodds');
+            if (response.data.authorization_url) {
+                const { authorization_url } = response.data;
+                setRedirectUrl(authorization_url);
+            } else {
+                console.error({error: "authorization url not present"})
+            }
+            
+        } catch (err) {
+            console.error(err)
+        }
     }
 
     const BuySevenOdds = async () => {
-        const getSevenOdds = await axios.get('http://localhost:5000/api/sevenodds', {
-        headers: {
-          'Authorization': `Bearer ${accessToken}`
+        try {
+            const response = await axios.get('http://localhost:5000/api/buysevenodds');
+            if (response.data.authorization_url) {
+                const { authorization_url } = response.data;
+                setRedirectUrl(authorization_url);
+            } else {
+                console.error({error: "authorization url not present"})
+            }
+            
+        } catch (err) {
+            console.error(err)
         }
-    });
-        console.log(getSevenOdds);
     }
+
+    useEffect (() => {
+         if (redirectUrl) {
+            window.open(redirectUrl, "_blank");
+        }
+    }, [redirectUrl]);
 
     return (
         <div>
