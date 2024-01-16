@@ -1,0 +1,18 @@
+.buy-option {
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color: #de562e;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+
+.choose_odds {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}

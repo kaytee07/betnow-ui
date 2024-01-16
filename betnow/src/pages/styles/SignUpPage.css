@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
+
+.signup-page {
+    background-image: url('https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: 'cover' !important;
+    background-position: center;
+    height: 100vh;
+    height: 100vh;
+}
+
+.main-signup {
+    background-color: #fafafa;
+    width: 50vw;
+    height: 49.2vw;
+    padding: 10px;
+    position: relative;
+}
+
+div.card {
+    position: absolute;
+    top: 30%;
+    width: 96%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+}
+
+div.card h2 {
+    margin-bottom: 20px;
+    font-family: 'Lato', sans-serif;
+}

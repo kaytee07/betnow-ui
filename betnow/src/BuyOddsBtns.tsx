@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import "./pages/styles/BuyOddsBtn.css"
 
 
 
@@ -62,10 +63,22 @@ const BuyOddsBtns = () => {
     }, [redirectUrl]);
 
     return (
-        <div>
-            <button onClick={BuyFiveOdds}>Buy five odds</button>
-            <button onClick={BuyTwoOdds}>Buy two odds</button>
-            <button onClick={BuySevenOdds}>Buy seven odds</button>
+        <div className="choose_odds">
+            <div className="two-odds"> 
+                <h1></h1>
+                <p></p>
+                <button className="buy-option" onClick={BuyFiveOdds}>Buy two odds</button>
+            </div>
+            <div className="five-odds">
+                <h1></h1>
+                <p></p>
+                <button className="buy-option" onClick={BuyTwoOdds}>Buy five odds</button>
+            </div>
+            <div className="seven-odds">
+                 <h1></h1>
+                 <p></p>
+                  <button className="buy-option" onClick={BuySevenOdds}>Buy seven odds</button>
+            </div>
         </div>
     )
 }

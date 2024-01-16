@@ -37,6 +37,7 @@ const Uploadform: React.FC<UploadFormProps> = ({accessToken}) => {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${accessToken}`
         },
+        withCredentials: true
       });
       console.log(response.data);
       

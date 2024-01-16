@@ -1,37 +1,21 @@
 import axios from "axios";
-import React from "react";
-
-interface UploadFormProps {
-  accessToken: string
-}
 
 
-const GetOddsBtn: React.FC<UploadFormProps> = ({accessToken}) => {
+
+const GetOddsBtn = () => {
 
     const getFiveOdds = async () => {
-        const getFiveOdds = await axios.get('http://localhost:5000/api/fiveodds', {
-        headers: {
-          'Authorization': `Bearer ${accessToken}`
-        }
-    });
+        const getFiveOdds = await axios.get('http://localhost:5000/api/fiveodds');
         console.log(getFiveOdds);
     }
 
     const getTwoOdds = async () => {
-        const getTwoOdds = await axios.get('http://localhost:5000/api/twoodds', {
-        headers: {
-          'Authorization': `Bearer ${accessToken}`
-        }
-    });
+        const getTwoOdds = await axios.get('http://localhost:5000/api/twoodds');
         console.log(getTwoOdds);
     }
 
     const getSevenOdds = async () => {
-        const getSevenOdds = await axios.get('http://localhost:5000/api/sevenodds', {
-        headers: {
-          'Authorization': `Bearer ${accessToken}`
-        }
-    });
+        const getSevenOdds = await axios.get('http://localhost:5000/api/sevenodds');
         console.log(getSevenOdds);
     }
 

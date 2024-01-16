@@ -1,16 +1,20 @@
 import './App.css'
-import SignInForm from './SignInForm'
-import SignUpForm from './SignupForm'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage';
+import LandingPage from './pages/LandingPage';
 
 
 function App() {
 
   return (
-    <>
-      <h1>Welcome</h1>
-      <SignInForm/>
-      <SignUpForm/>
-    </>
+    <Router>
+      <Routes>
+          <Route path='/api/signin' Component={SignInPage}/>
+          <Route path='/api/signin' Component={SignUpPage}/>
+          <Route path='/' Component={LandingPage}/>
+      </Routes>
+    </Router>
   )
 }
 

@@ -1,0 +1,45 @@
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    width: 235px;
+    height: 150px;
+    gap: 10px;
+}
+
+div.email {
+    display: flex;
+    flex-direction: column;
+}
+
+div.email label {
+    color: #717171;
+}
+
+div.email input {
+    border: 1px solid #dcdcdc;
+    height: 24px;
+}
+
+div.password {
+    display: flex;
+    flex-direction: column;
+}
+
+div.password label {
+    color: #717171;
+}
+
+div.password input {
+    border: 1px solid #dcdcdc;
+    height: 24px;
+}
+
+form button {
+    background-color: #000000;
+    color: #ffffff;
+    margin-top: 10px;
+    border: none;
+    height: 24px;
+    border-radius: 3px;
+    cursor: pointer;
+}

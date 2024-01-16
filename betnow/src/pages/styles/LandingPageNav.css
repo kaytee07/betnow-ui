@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;@400;500&display=swap');
+.land-nav {
+    height: 50px;
+    display: flex;
+   /* box-shadow: 0 0 5px 0 black*/;
+    background-color: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
