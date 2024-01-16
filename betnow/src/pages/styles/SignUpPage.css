@@ -11,16 +11,16 @@
 .main-signup {
     background-color: #fafafa;
     width: 50vw;
-    height: 49.2vw;
+    height: 100vh;
     padding: 10px;
     position: relative;
 }
 
 div.card {
     position: absolute;
-    top: 30%;
+    top: 27%;
     width: 96%;
-    height: 200px;
+    height: 400px;
     display: flex;
     align-items: center;
     flex-direction: column;

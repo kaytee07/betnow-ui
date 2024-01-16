@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+import "./pages/styles/SignUpForm.css"
 import axios from "axios";
 
 type Data = {
@@ -55,15 +56,23 @@ const SignUpForm = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="firstname">first name</label>
-                <input onChange={handleFirstNameChange} id="firstname" value={firstName}/>
-                <label htmlFor="lastname">first name</label>
-                <input onChange={handleLastNameChange} id="lastname" value={lastName}/>
-                <label htmlFor="email">email</label>
-                <input onChange={handleEmailChange} id="email" value={email}/>
-                <label htmlFor="password">password</label>
-                <input onChange={handlePasswordChange} id="password" value={password}/>
+            <form onSubmit={handleSubmit} className="signup-form">
+                <div className="first-name">
+                    <label htmlFor="firstname">first name</label>
+                    <input onChange={handleFirstNameChange} id="firstname" value={firstName}/>
+                </div>
+                <div className="last-name">
+                    <label htmlFor="lastname">first name</label>
+                    <input onChange={handleLastNameChange} id="lastname" value={lastName}/>
+                </div>
+                <div className="email">
+                    <label htmlFor="email">email</label>
+                    <input onChange={handleEmailChange} id="email" value={email}/>
+                </div>
+                <div className="password">
+                    <label htmlFor="password">password</label>
+                    <input onChange={handlePasswordChange} id="password" value={password}/>
+                </div>
                 <button>Sign up</button>
             </form>
         </div>

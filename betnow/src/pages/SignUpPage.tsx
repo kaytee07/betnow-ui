@@ -3,7 +3,7 @@ import "./styles/SignUpPage.css"
 
 const  SignUpPage = () => {
     return (
-        <div className="signiup-page">
+        <div className="signup-page">
             <div className="main-signup">
                 <div className="card">
                     <h2>Betnow</h2>

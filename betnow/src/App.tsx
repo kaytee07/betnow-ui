@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Routes>
           <Route path='/api/signin' Component={SignInPage}/>
-          <Route path='/api/signin' Component={SignUpPage}/>
+          <Route path='/api/signup' Component={SignUpPage}/>
           <Route path='/' Component={LandingPage}/>
       </Routes>
     </Router>
