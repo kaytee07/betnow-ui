@@ -36,7 +36,7 @@ const SignInForm = () => {
                 },
                 withCredentials: true
             });
-            console.log(response.data); // Assuming you want to access the response data
+            window.location.href = response.data
         } catch (err) {
             console.error(err);
         }

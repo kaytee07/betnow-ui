@@ -43,17 +43,24 @@ const Uploadform = () => {
   };
 
     return (
-    <div>
-      <label htmlFor="photo">choose ticket</label>
-      <input type="file" onChange={handleFileChange} id="photo"/>
-      <label htmlFor="oddType">Choose odd type</label>
-      <select onChange={handleOddChange} id="oddType">
-        <option value="two odds">Two Odds</option>
-        <option value="five odds">Five Odds</option>
-        <option value="seven odds">Seven Odds</option>
-      </select>
+    <div className="upload-form">
+      <form onSubmit={handleUpload}>
+        <div className="choose-ticket">
+          <label htmlFor="photo">choose ticket</label>
+          <input type="file"  onChange={handleFileChange} id="photo"/>
+        </div>
+        <div className="choose-odd">
+          <label htmlFor="oddType">Choose odd type</label>
+          <select onChange={handleOddChange} id="oddType">
+            <option value="two odds">Two Odds</option>
+            <option value="five odds">Five Odds</option>
+            <option value="seven odds">Seven Odds</option>
+          </select>
+        </div>
+      </form>
       <button onClick={handleUpload}>Upload</button>
     </div>
+    
   );
 }
 

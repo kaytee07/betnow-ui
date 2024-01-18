@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Routes>
-          <Route path='/api/signin' Component={SignInPage}/>
+          <Route path='/api/login' Component={SignInPage}/>
           <Route path='/api/signup' Component={SignUpPage}/>
           <Route path='/api/home' Component={Dashboard}/>
           <Route path='/' Component={LandingPage}/>

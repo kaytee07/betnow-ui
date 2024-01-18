@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
+div.body {
+    height: 100vh;
+}
+
 div.logo {
     color: black;
 }
@@ -8,7 +13,7 @@ ul.lists {
 }
 
 ul.lists {
-    color: #b0b7c4;
+    color: #888f9d;
     display: flex;
     justify-content: space-between;
     width: 500px;
@@ -28,4 +33,64 @@ div.user {
 div.logo {
     display: flex;
     align-items: center;
+}
+
+div.upload-form {
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    align-items: center;
+    gap: 20px;
+}
+
+div.upload-form form{
+    border: 2px dotted #b0b7c4;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    gap: 30px;
+    width: 500px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+div.upload-form button {
+    width: 500px;
+    height: 30px;
+    border: none;
+}
+
+div.upload-section {
+    margin-top: 50px;
+}
+
+.choose-ticket input {
+
+}
+
+div.choose-ticket label {
+    display: flex;
+    height: 38px;
+    width: 100px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+div.choose-odd {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+select#oddType {
+    height: 30px;
+    border: 1px solid #888f9d;
 }
