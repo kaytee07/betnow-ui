@@ -1,49 +1,57 @@
 import "./styles/Dashboard.css";
+import React, { useEffect, useState } from "react";
+import { useNavigate} from "react-router-dom";
+import axios from "axios";
 import LandingPageNav from "../LandingPageNav";
 import Uploadform from "../Uploadform";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { Navigate } from "react-router-dom";
 
 
 const Dashboard = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const isAuthenticated = async () => {
-        await axios.get('http://localhost:5000/api/auth', {
-            withCredentials: true
-        }).then((res) => {
-             if (res.data.success === 'ok') {
-                setIsAuthorized(true)
-             } else {
-                setIsAuthorized(false)
-             }
-        }).catch(err => {
-            console.log(err)
-            setIsAuthorized(false)
-        })
-       
-    }
+      try {
+        const response = await axios.get('http://localhost:5000/api/auth', {
+          withCredentials: true
+        });
+
+        if (response.data.success === 'ok') {
+          setIsAuthorized(true);
+        } else {
+          setIsAuthorized(false);
+        }
+      } catch (err) {
+        console.error(err);
+        setIsAuthorized(false);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
     isAuthenticated();
-    
-  }, [])
+  }, []);
 
-  const dashboard = () => {
-    return (
-        <section className="body">
-            <LandingPageNav />
-            <div className="upload-section">
-                <Uploadform />
-            </div>
-        </section>
-    )
+  if (isLoading) {
+    // You can render a loading spinner or any other indicator
+    return <div>Loading...</div>;
   }
 
-  return (
-    isAuthorized ? dashboard() : <Navigate replace to="/api/login" />
-  );
+  if (isAuthorized) {
+    return (
+      <section className="body">
+        <LandingPageNav />
+        <div className="upload-section">
+          <Uploadform />
+        </div>
+      </section>
+    );
+  } else {
+    navigate('/api/login');
+    return null; 
+  }
 };
 
 export default Dashboard;

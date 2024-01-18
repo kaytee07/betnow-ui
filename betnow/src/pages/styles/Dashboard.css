@@ -20,7 +20,7 @@ ul.lists {
     list-style: none;
 }
 
-div.user {
+.user {
     display: flex;
     align-items: center;
     background-color: #f6f6f6;
@@ -61,6 +61,7 @@ div.upload-form button {
     width: 500px;
     height: 30px;
     border: none;
+    cursor: pointer;
 }
 
 div.upload-section {
@@ -69,19 +70,19 @@ div.upload-section {
 
 .choose-ticket input {
 
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    
+}
+
+input#photo {
+    width: 180px;
+    cursor: pointer;
 }
 
 div.choose-ticket label {
-    display: flex;
-    height: 38px;
-    width: 100px;
-    background-color: #f6f6f6;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
+    display: none;
+    
 }
 
 div.choose-odd {
@@ -93,4 +94,15 @@ div.choose-odd {
 select#oddType {
     height: 30px;
     border: 1px solid #888f9d;
+}
+
+ul.user-profile {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+ul.user-profile li {
+    list-style: none;
+    color: #888f9d;
 }

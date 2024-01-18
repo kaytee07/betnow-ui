@@ -36,6 +36,7 @@ const SignInForm = () => {
                 },
                 withCredentials: true
             });
+            console.log(response.data)
             window.location.href = response.data
         } catch (err) {
             console.error(err);
