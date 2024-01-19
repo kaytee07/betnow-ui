@@ -104,5 +104,10 @@ ul.user-profile {
 
 ul.user-profile li {
     list-style: none;
+}
+
+li.items a{
+    text-decoration: none;
     color: #888f9d;
 }
+

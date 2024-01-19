@@ -6,6 +6,7 @@ import LandingPageNav from "../LandingPageNav";
 import Uploadform from "../Uploadform";
 
 
+
 const Dashboard = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -22,9 +23,9 @@ const Dashboard = () => {
           setIsAuthorized(true);
         } else {
           setIsAuthorized(false);
+          navigate('/api/login');
         }
       } catch (err) {
-        console.error(err);
         setIsAuthorized(false);
       } finally {
         setIsLoading(false);
@@ -49,7 +50,6 @@ const Dashboard = () => {
       </section>
     );
   } else {
-    navigate('/api/login');
     return null; 
   }
 };

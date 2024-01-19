@@ -47,8 +47,14 @@ const SignUpForm = () => {
                  headers: {
                     'Content-Type': 'application/json'
                 }
-            });
+            }).then(() => {
+                setFirstName("");
+                setLasttName("");
+                setEmail("");
+                setPassword("")
+            })
             console.log(response)
+
         } catch (err) {
             console.error(err);
         }

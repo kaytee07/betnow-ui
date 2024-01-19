@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./pages/styles/LandingPageNav.css"
 import axios from "axios";
 
@@ -42,19 +43,19 @@ useEffect(() => {
             </div>
                 <ul className="lists">
                     <li className="items">
-                        create user
+                        <Link to="/api/createuser"> create user </Link> 
+                    </li>
+                    {/* <li className="items">
+                        <Link to=""> all users </Link>
+                    </li> */}
+                    <li className="items">
+                        <Link to="/api/twoodds"> two odds </Link>
                     </li>
                     <li className="items">
-                        all users
+                        <Link to="/api/fiveodds"> five odds </Link>
                     </li>
                     <li className="items">
-                        two odds
-                    </li>
-                    <li className="items">
-                        five odds
-                    </li>
-                    <li className="items">
-                        seven odds
+                        <Link to="/api/sevenodds"> seven odds </Link>
                     </li>
                 </ul>
             <ul className="user-profile">

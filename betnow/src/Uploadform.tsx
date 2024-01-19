@@ -1,10 +1,17 @@
 import React, { ChangeEvent, useState, useEffect } from "react";
 import axios from "axios";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Uploadform = () => {
     const [image, setImage] = useState(null);
     const [oddType, setOddType] = useState("");
+
+    const handleUploadImage = () => {
+      toast.success('image uploaded!');
+    };
+
     useEffect(() => {
       setOddType("two odds")
     }, [])
@@ -29,21 +36,24 @@ const Uploadform = () => {
     console.log(formData)
 
     try {
-      const response = await axios.post('http://localhost:5000/api/upload', formData, {
+      await axios.post('http://localhost:5000/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
         withCredentials: true
-      });
-      console.log(response.data);
+      }).then((res) => {
+        console.log(res)
+        if (res.data.url) handleUploadImage()
+      })
       
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
     }
   };
 
     return (
     <div className="upload-form">
+      <ToastContainer />
       <form onSubmit={handleUpload}>
         <div className="choose-ticket">
           <label htmlFor="photo">choose ticket</label>

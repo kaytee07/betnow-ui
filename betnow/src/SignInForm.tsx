@@ -1,5 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-import "./pages/styles/SignInForm.css"
+import "./pages/styles/SignInForm.css";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import axios from "axios";
 
