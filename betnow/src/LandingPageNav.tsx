@@ -60,9 +60,9 @@ useEffect(() => {
                 </ul>
             <ul className="user-profile">
                 <li className="logout" onClick={logout}>logout</li>
-                <li className="user">
+                {/* <li className="user">
                     <h3>KT</h3>
-                </li>
+                </li> */}
             </ul>
         </header>
     )

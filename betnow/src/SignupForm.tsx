@@ -1,6 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import "./pages/styles/SignUpForm.css"
 import axios from "axios";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type Data = {
     firstName: string,
@@ -14,6 +16,10 @@ const SignUpForm = () => {
     const [lastName, setLasttName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const handleCreateUser = () => {
+      toast.success('new user created');
+    };
 
     
     const handleLastNameChange = (evt: ChangeEvent<HTMLInputElement>) => {
@@ -47,14 +53,13 @@ const SignUpForm = () => {
                  headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(() => {
+            }).then((res) => {
                 setFirstName("");
                 setLasttName("");
                 setEmail("");
                 setPassword("")
+                if (res.data.firstName) handleCreateUser();
             })
-            console.log(response)
-
         } catch (err) {
             console.error(err);
         }
@@ -62,6 +67,7 @@ const SignUpForm = () => {
 
     return (
         <div>
+            <ToastContainer />
             <form onSubmit={handleSubmit} className="signup-form">
                 <div className="first-name">
                     <label htmlFor="firstname">first name</label>

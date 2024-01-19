@@ -11,10 +11,12 @@ const GetSevenOddsPage = () => {
         try {
             const response = await axios.get("http://localhost:5000/api/sevenodds", {
                 withCredentials: true
-            });
-            setUser(response.data.user)
-            console.log(response.data.success)
-            setAllPhotos(response.data.success)
+            }).then((res) => {
+                if(res.data.user) {
+                    setUser(res.data.user)
+                    setAllPhotos(res.data.success)
+                } 
+            })
         } catch (err) {
             console.log(err)
         }

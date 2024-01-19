@@ -11,11 +11,12 @@ const GetTwoOddsPage = () => {
         try {
             const response = await axios.get("http://localhost:5000/api/twoodds", {
                 withCredentials: true
-            });
-            if (response.data.success) {
-                setUser(response.data.user)
-                setAllPhotos(response.data.success)
-            }
+            }).then((res) => {
+                if(res.data.user) {
+                    setUser(res.data.user)
+                    setAllPhotos(res.data.success)
+                } 
+            })
             
         } catch (err) {
             console.log(err)

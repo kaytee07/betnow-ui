@@ -1,20 +1,26 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./styles/getOdds.css"
+import "./styles/getOdds.css";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const GetFiveOddsPage = () => {
     const [allPhotos, setAllPhotos] = useState([]);
     const [user, setUser] = useState("");
     const [isDeleted, setIsDeleted] = useState(false);
+
     
     const getAllPhotos = async () => {
         try {
             const response = await axios.get("http://localhost:5000/api/fiveodds", {
                 withCredentials: true
-            });
-            setUser(response.data.user)
-            console.log(response.data.success)
-            setAllPhotos(response.data.success)
+            }).then((res) => {
+                if(res.data.user) {
+                    setUser(res.data.user)
+                    setAllPhotos(res.data.success)
+                } 
+            })
+            
         } catch (err) {
             console.log(err)
         }
@@ -53,7 +59,7 @@ const GetFiveOddsPage = () => {
 
     return (
         <section className="all-images">
-            {allPhotos.length > 0 ? allPhotos.map((photos) => {
+            {allPhotos.length  ? allPhotos.map((photos) => {
                 return  (
                     <div key={photos._id} className="ticket">
                         <img  src={photos.image.imageUrl} />

@@ -9,7 +9,7 @@ const Uploadform = () => {
     const [oddType, setOddType] = useState("");
 
     const handleUploadImage = () => {
-      toast.success('image uploaded!');
+      toast.success('uploaded!');
     };
 
     useEffect(() => {

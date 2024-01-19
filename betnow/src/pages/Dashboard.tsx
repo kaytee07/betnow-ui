@@ -23,7 +23,6 @@ const Dashboard = () => {
           setIsAuthorized(true);
         } else {
           setIsAuthorized(false);
-          navigate('/api/login');
         }
       } catch (err) {
         setIsAuthorized(false);
@@ -50,7 +49,7 @@ const Dashboard = () => {
       </section>
     );
   } else {
-    return null; 
+    navigate('/api/login');
   }
 };
 
