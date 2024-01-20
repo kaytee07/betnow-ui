@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./pages/styles/LandingPageNav.css"
 import axios from "axios";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
-const LandingPageNav = () => {
+const LandingPageNav = ({isMenuOpen}) => {
     const [isLoggedOut, setIsLoggedOut] = useState(false)
     const logout = async () => {
     console.log("dog");
@@ -60,6 +61,9 @@ useEffect(() => {
                 </ul>
             <ul className="user-profile">
                 <li className="logout" onClick={logout}>logout</li>
+                <li onClick={isMenuOpen} className="menu">
+                    <i className="bi bi-list"></i>
+                </li>
                 {/* <li className="user">
                     <h3>KT</h3>
                 </li> */}

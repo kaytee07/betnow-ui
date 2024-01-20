@@ -4,13 +4,19 @@ import { useNavigate} from "react-router-dom";
 import axios from "axios";
 import LandingPageNav from "../LandingPageNav";
 import Uploadform from "../Uploadform";
+import DashboardMenu from "./menu/DashboardMenu";
 
 
 
 const Dashboard = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
   const navigate = useNavigate();
+
+  const toggleMenu = () => {
+    openMenu ? setOpenMenu(false) : setOpenMenu(true);
+  }
 
   useEffect(() => {
     const isAuthenticated = async () => {
@@ -42,7 +48,8 @@ const Dashboard = () => {
   if (isAuthorized) {
     return (
       <section className="body">
-        <LandingPageNav />
+        <LandingPageNav isMenuOpen={toggleMenu}/>
+        {openMenu ? <DashboardMenu /> : ""}     
         <div className="upload-section">
           <Uploadform />
         </div>

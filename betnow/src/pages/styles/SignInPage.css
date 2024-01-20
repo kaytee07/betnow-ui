@@ -30,3 +30,9 @@ div.card h2 {
     margin-bottom: 20px;
     font-family: 'Lato', sans-serif;
 }
+
+@media (max-width: 767px) {
+    .main-signin {
+        width: 100vw;
+    }
+}
