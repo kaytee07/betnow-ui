@@ -137,6 +137,10 @@ ul.user-profile li.menu {
         cursor: pointer;
     }
 
+    i {
+        display: block;
+    }
+
     ul.profile-menu {
         height: 140px;
         width: 130px;
@@ -153,7 +157,7 @@ ul.user-profile li.menu {
     }
 
     ul.dropdown-menu {
-        display: none;
+        display: block;
         position: relative;
     }
 

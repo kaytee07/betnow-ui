@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./styles/getOdds.css"
+import "./styles/getOdds.css";
+import { Link } from "react-router-dom";
 
 const GetTwoOddsPage = () => {
     const [allPhotos, setAllPhotos] = useState([]);
@@ -56,6 +57,7 @@ const GetTwoOddsPage = () => {
 
     return (
         <section className="all-images">
+             <Link to="/api/home"><i className="bi bi-box-arrow-left"></i></Link>
             {allPhotos.length > 0 ? allPhotos.map((photos) => {
                 return  (
                     <div key={photos._id} className="ticket">

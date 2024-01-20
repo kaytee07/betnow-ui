@@ -31,3 +31,25 @@ div.card h2 {
     margin-bottom: 20px;
     font-family: 'Lato', sans-serif;
 }
+
+i {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .main-signup {
+        width: 100vw;
+    }
+
+    div.card {
+        top: 20%;
+    }
+
+    i.bi.bi-box-arrow-left {
+        display: block;
+        position: absolute;
+        left: 90%;
+        font-size: x-large;
+    }
+
+}

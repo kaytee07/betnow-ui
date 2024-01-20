@@ -8,7 +8,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 const LandingPageNav = ({isMenuOpen}) => {
     const [isLoggedOut, setIsLoggedOut] = useState(false)
     const logout = async () => {
-    console.log("dog");
 
     try {
         const response = await axios.post(

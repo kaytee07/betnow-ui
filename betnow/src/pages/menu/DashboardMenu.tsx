@@ -27,9 +27,7 @@ const DashboardMenu = () => {
 useEffect(() => {
     if (isLoggedOut) {
         window.location.reload();
-    } else {
-        console.log("already loaded")
-    }
+    } 
 }, [isLoggedOut])
     return (
         <div className="dropdown-menu">
