@@ -36,6 +36,10 @@ i {
     display: none;
 }
 
+div.card img {
+    width: 150px;
+}
+
 @media (max-width: 767px) {
     .main-signup {
         width: 100vw;

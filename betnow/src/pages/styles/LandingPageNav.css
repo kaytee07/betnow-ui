@@ -11,3 +11,7 @@
 .logo {
     padding: none;
 }
+
+div.logo img {
+    width: 80px;
+}

@@ -39,7 +39,7 @@ useEffect(() => {
     return (
         <header className="land-nav">
             <div className="logo">
-                <h3>Betnow</h3>
+                <img src="https://res.cloudinary.com/dbyubqmb0/image/upload/v1705767327/BETNOW_LOGO_jgvfbm.png" alt="" />
             </div>
                 <ul className="lists">
                     <li className="items">

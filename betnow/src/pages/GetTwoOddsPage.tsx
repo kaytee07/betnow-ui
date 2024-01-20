@@ -57,7 +57,7 @@ const GetTwoOddsPage = () => {
 
     return (
         <section className="all-images">
-             <Link to="/api/home"><i className="bi bi-box-arrow-left"></i></Link>
+            { user === "admin" ? <Link to="/api/home"><i className="bi bi-box-arrow-left"></i></Link>: ""}
             {allPhotos.length > 0 ? allPhotos.map((photos) => {
                 return  (
                     <div key={photos._id} className="ticket">
