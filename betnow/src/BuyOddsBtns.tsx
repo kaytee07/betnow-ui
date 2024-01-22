@@ -67,12 +67,12 @@ const BuyOddsBtns = () => {
             <div className="two-odds"> 
                 <h1></h1>
                 <p></p>
-                <button className="buy-option" onClick={BuyFiveOdds}>Buy two odds</button>
+                <button className="buy-option" onClick={BuyTwoOdds}>Buy two odds</button>
             </div>
             <div className="five-odds">
                 <h1></h1>
                 <p></p>
-                <button className="buy-option" onClick={BuyTwoOdds}>Buy five odds</button>
+                <button className="buy-option" onClick={BuyFiveOdds}>Buy five odds</button>
             </div>
             <div className="seven-odds">
                  <h1></h1>

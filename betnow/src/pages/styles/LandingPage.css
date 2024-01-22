@@ -2,7 +2,7 @@
 
 .header {
     background-image: url('https://images.unsplash.com/photo-1471295253337-3ceaaedca402?q=80&w=1468&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: 'cover' !important;
+    background-size: cover !important;
     background-position: center;
     height: 100vh;
   
@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     width: 50vw;
-    height: 90vh;   
+    height: 70vh;   
     padding: 10px 70px; 
 }
 
@@ -26,4 +26,52 @@
 .logo {
     color: white;
 }
+
+.land-logo img {
+    width: 170px;
+}
+
+.header header {
+    padding: 0px 62px;
+}
+
+@media (max-width: 767px) {
+    section.main {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .header {
+        background-image: url('https://images.unsplash.com/photo-1517747614396-d21a78b850e8?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover !important;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .main-text-btn {
+        width: 100vw;
+        height: 70vh;
+        padding: 10px 10px;
+    }
+
+    .header header {
+        padding: 0px 10px;
+    }
+
+    .main-text-btn h1 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 40px;
+        color: #ffffff;
+    }
+
+    .choose_odds {
+        width: 100% !important;
+        display: flex !important;
+        gap: 20px !important;
+    }   
+
+}
+
+
 
