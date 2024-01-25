@@ -19,7 +19,7 @@ const BuyOddsBtns = () => {
 
     const BuyFiveOdds = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/buyfiveodds', {
+            const response = await axios.get('https://bettnow.vercel.app/api/buyfiveodds', {
                 withCredentials: true
             });
             if (response.data.message) return setOddsAvailable(false)
@@ -39,7 +39,7 @@ const BuyOddsBtns = () => {
 
     const BuyTwoOdds = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/buytwoodds', {
+            const response = await axios.get('https://bettnow.vercel.app/api/buytwoodds', {
                 withCredentials: true
             });
             console.log(response)
@@ -58,7 +58,7 @@ const BuyOddsBtns = () => {
 
     const BuySevenOdds = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/buysevenodds', {
+            const response = await axios.get('https://bettnow.vercel.app/api/buysevenodds', {
                 withCredentials: true
             });
             console.log(response)

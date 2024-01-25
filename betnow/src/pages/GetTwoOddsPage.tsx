@@ -23,7 +23,7 @@ const GetTwoOddsPage = () => {
     const getAllPhotos = async () => {
         const urlParams = new URLSearchParams(window.location.href);
         const referenceValue = urlParams.get("reference");
-        let url = `http://localhost:5000/api/twoodds`
+        let url = `https://bettnow.vercel.app/api/twoodds`
         if (referenceValue) {
             url = `${url}?reference=${referenceValue}`
         }
@@ -49,7 +49,7 @@ const GetTwoOddsPage = () => {
             const requestData = {
                 url: imageUrl,
             };
-            const response = await axios.delete("http://localhost:5000/api/removetwoodds", {
+            const response = await axios.delete("https://bettnow.vercel.app/api/removetwoodds", {
                 data: requestData,
                 headers: {
                     'Content-Type': 'application/json',

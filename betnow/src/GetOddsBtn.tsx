@@ -5,15 +5,15 @@ import axios from "axios";
 const GetOddsBtn = () => {
 
     const getFiveOdds = async () => {
-        await axios.get('http://localhost:5000/api/fiveodds');
+        await axios.get('https://bettnow.vercel.app/api/fiveodds');
     }
 
     const getTwoOdds = async () => {
-        await axios.get('http://localhost:5000/api/twoodds');
+        await axios.get('https://bettnow.vercel.app/api/twoodds');
     }
 
     const getSevenOdds = async () => {
-        await axios.get('http://localhost:5000/api/sevenodds');
+        await axios.get('https://bettnow.vercel.app/api/sevenodds');
     }
 
     return (

@@ -8,7 +8,7 @@ const DashboardMenu = () => {
 
     try {
         const response = await axios.post(
-        'http://localhost:5000/api/logout',
+        'https://bettnow.vercel.app/api/logout',
         {},
         {
             headers: {

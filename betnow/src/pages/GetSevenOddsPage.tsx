@@ -25,9 +25,9 @@ const GetSevenOddsPage = () => {
         const referenceValue = urlParams.get("reference");
         let url = "";
         if (!referenceValue) {
-             url = `http://localhost:5000/api/sevenodds`
+             url = `https://bettnow.vercel.app/api/sevenodds`
         } else {
-             url = `http://localhost:5000/api/sevenodds?reference=${referenceValue}`
+             url = `https://bettnow.vercel.app/api/sevenodds?reference=${referenceValue}`
         }
         try {
             await axios.get(url, {
@@ -49,7 +49,7 @@ const GetSevenOddsPage = () => {
             const requestData = {
                 url: imageUrl,
             };
-            const response = await axios.delete("http://localhost:5000/api/removesevenodds", {
+            const response = await axios.delete("https://bettnow.vercel.app/api/removesevenodds", {
                 data: requestData,
                 headers: {
                     'Content-Type': 'application/json',

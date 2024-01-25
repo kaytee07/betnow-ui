@@ -49,7 +49,7 @@ const SignUpForm = () => {
         }
         
         try {
-            await axios.post('http://localhost:5000/api/signup', data, {
+            await axios.post('https://bettnow.vercel.app/api/signup', data, {
                  headers: {
                     'Content-Type': 'application/json'
                 }

@@ -21,7 +21,7 @@ const GetFiveOddsPage = () => {
     
     const getAllPhotos = async () => {
         try {
-            await axios.get("http://localhost:5000/api/fiveodds", {
+            await axios.get("https://bettnow.vercel.app/api/fiveodds", {
                 withCredentials: true
             }).then((res) => {
                 if(res.data.user) {
@@ -41,7 +41,7 @@ const GetFiveOddsPage = () => {
             const requestData = {
                 url: imageUrl,
             };
-            const response = await axios.delete("http://localhost:5000/api/removefiveodds", {
+            const response = await axios.delete("https://bettnow.vercel.app/api/removefiveodds", {
                 data: requestData,
                 headers: {
                     'Content-Type': 'application/json',
