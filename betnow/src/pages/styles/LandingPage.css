@@ -68,7 +68,6 @@
     .choose_odds {
         width: 100% !important;
         display: flex !important;
-        gap: 20px !important;
     }   
 
 }

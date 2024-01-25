@@ -2,15 +2,24 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./styles/getOdds.css";
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 const GetTwoOddsPage = () => {
     const [allPhotos, setAllPhotos] = useState([]);
     const [user, setUser] = useState("");
     const [isDeleted, setIsDeleted] = useState(false);
+
     
     const getAllPhotos = async () => {
+        const urlParams = new URLSearchParams(window.location.href);
+        const referenceValue = urlParams.get("reference");
+        let url = `http://localhost:5000/api/twoodds`
+        if (referenceValue) {
+            url = `${url}?reference=${referenceValue}`
+        }
+
         try {
-            const response = await axios.get("http://localhost:5000/api/twoodds", {
+            await axios.get(url, {
                 withCredentials: true
             }).then((res) => {
                 if(res.data.user) {
@@ -37,7 +46,6 @@ const GetTwoOddsPage = () => {
                 },
                 withCredentials: true
             })
-           console.log(response.data)
            if (response.data.success.deletedCount > 0) setIsDeleted(true); 
         } catch (err) {
             console.log(err)

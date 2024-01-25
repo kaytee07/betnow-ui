@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./pages/styles/LandingPageNav.css"
 import axios from "axios";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+interface LandingPageProp {
+    isMenuOpen: () => void
+}
 
-
-const LandingPageNav = ({isMenuOpen}) => {
+const LandingPageNav: React.FC<LandingPageProp> = ({isMenuOpen}) => {
     const [isLoggedOut, setIsLoggedOut] = useState(false)
     const logout = async () => {
 
@@ -30,9 +32,7 @@ const LandingPageNav = ({isMenuOpen}) => {
 useEffect(() => {
     if (isLoggedOut) {
         window.location.reload();
-    } else {
-        console.log("already loaded")
-    }
+    } 
 }, [isLoggedOut])
 
 

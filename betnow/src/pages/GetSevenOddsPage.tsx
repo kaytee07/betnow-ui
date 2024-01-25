@@ -8,9 +8,18 @@ const GetSevenOddsPage = () => {
     const [user, setUser] = useState("");
     const [isDeleted, setIsDeleted] = useState(false);
     
+    
     const getAllPhotos = async () => {
+        const urlParams = new URLSearchParams(window.location.href);
+        const referenceValue = urlParams.get("reference");
+        let url = "";
+        if (!referenceValue) {
+             url = `http://localhost:5000/api/sevenodds`
+        } else {
+             url = `http://localhost:5000/api/sevenodds?reference=${referenceValue}`
+        }
         try {
-            const response = await axios.get("http://localhost:5000/api/sevenodds", {
+            const response = await axios.get(url, {
                 withCredentials: true
             }).then((res) => {
                 if(res.data.user) {
@@ -36,7 +45,6 @@ const GetSevenOddsPage = () => {
                 },
                 withCredentials: true
             })
-           console.log(response.data)
            if (response.data.success.deletedCount > 0) setIsDeleted(true); 
         } catch (err) {
             console.log(err)

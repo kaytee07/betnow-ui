@@ -9,7 +9,6 @@ const GetFiveOddsPage = () => {
     const [allPhotos, setAllPhotos] = useState([]);
     const [user, setUser] = useState("");
     const [isDeleted, setIsDeleted] = useState(false);
-
     
     const getAllPhotos = async () => {
         try {
@@ -40,7 +39,6 @@ const GetFiveOddsPage = () => {
                 },
                 withCredentials: true
             })
-           console.log(response.data)
            if (response.data.success.deletedCount > 0) setIsDeleted(true); 
         } catch (err) {
             console.log(err)

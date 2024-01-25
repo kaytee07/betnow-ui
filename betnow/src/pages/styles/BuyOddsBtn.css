@@ -8,11 +8,11 @@
     color: #ffffff;
     font-size: 15px;
     cursor: pointer;
+    margin-right: 20px;
     
 }
 
 .choose_odds {
     width: 100%;
     display: flex;
-    gap: 30px;
 }

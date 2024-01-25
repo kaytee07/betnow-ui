@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 500px;
+    height: 500px;
 }
 
 div.ticket button {
@@ -18,4 +20,7 @@ div.ticket button {
     color: white;
     border: none;
     border-radius: 5px;
+    width: 108px;
+    margin: 0px auto;
+    cursor: pointer;
 }

@@ -1,17 +1,28 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./pages/styles/BuyOddsBtn.css"
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 
 const BuyOddsBtns = () => {
     const [redirectUrl, setRedirectUrl] = useState(null);
+    const [oddsAvailable, setOddsAvailable] = useState(true);
+
+    const handleNoOddsAvailable = () => {
+        oddsAvailable
+      toast.error('ticket havent been posted yet');
+    };
     
 
     const BuyFiveOdds = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/buyfiveodds');
+            const response = await axios.get('http://localhost:5000/api/buyfiveodds', {
+                withCredentials: true
+            });
+            if (response.data.message) return setOddsAvailable(false)
             if (response.data.authorization_url) {
                 const { authorization_url } = response.data;
                 setRedirectUrl(authorization_url);
@@ -28,7 +39,11 @@ const BuyOddsBtns = () => {
 
     const BuyTwoOdds = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/buytwoodds');
+            const response = await axios.get('http://localhost:5000/api/buytwoodds', {
+                withCredentials: true
+            });
+            console.log(response)
+            if (response.data.message) return setOddsAvailable(false);
             if (response.data.authorization_url) {
                 const { authorization_url } = response.data;
                 setRedirectUrl(authorization_url);
@@ -43,7 +58,11 @@ const BuyOddsBtns = () => {
 
     const BuySevenOdds = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/buysevenodds');
+            const response = await axios.get('http://localhost:5000/api/buysevenodds', {
+                withCredentials: true
+            });
+            console.log(response)
+            if (response.data.message) return setOddsAvailable(false);
             if (response.data.authorization_url) {
                 const { authorization_url } = response.data;
                 setRedirectUrl(authorization_url);
@@ -62,8 +81,14 @@ const BuyOddsBtns = () => {
         }
     }, [redirectUrl]);
 
+    useEffect(() => {
+        if (!oddsAvailable) handleNoOddsAvailable();
+        setOddsAvailable(true)
+    }, [oddsAvailable])
+
     return (
         <div className="choose_odds">
+            <ToastContainer/>
             <div className="two-odds"> 
                 <h1></h1>
                 <p></p>

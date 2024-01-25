@@ -16,7 +16,6 @@ const Dashboard = () => {
 
   const toggleMenu = () => {
     openMenu ? setOpenMenu(false) : setOpenMenu(true);
-    console.log(openMenu)
   }
 
   useEffect(() => {
