@@ -8,7 +8,7 @@ const DashboardMenu = () => {
 
     try {
         const response = await axios.post(
-        'https://bettnow.vercel.app/api/logout',
+        'https://bettnow.onrender.com/api/logout',
         {},
         {
             headers: {

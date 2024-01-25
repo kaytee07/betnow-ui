@@ -21,7 +21,7 @@ const Dashboard = () => {
   useEffect(() => {
     const isAuthenticated = async () => {
       try {
-        const response = await axios.get('https://bettnow.vercel.app/api/auth', {
+        const response = await axios.get('https://bettnow.onrender.com/api/auth', {
           withCredentials: true
         });
 
