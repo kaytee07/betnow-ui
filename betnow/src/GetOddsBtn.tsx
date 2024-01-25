@@ -5,15 +5,15 @@ import axios from "axios";
 const GetOddsBtn = () => {
 
     const getFiveOdds = async () => {
-        await axios.get('https://bettnow.onrender.com/api/fiveodds');
+        await axios.get('https://api.bettnow.org/api/fiveodds');
     }
 
     const getTwoOdds = async () => {
-        await axios.get('https://bettnow.onrender.com/api/twoodds');
+        await axios.get('https://api.bettnow.org/api/twoodds');
     }
 
     const getSevenOdds = async () => {
-        await axios.get('https://bettnow.onrender.com/api/sevenodds');
+        await axios.get('https://api.bettnow.org/api/sevenodds');
     }
 
     return (

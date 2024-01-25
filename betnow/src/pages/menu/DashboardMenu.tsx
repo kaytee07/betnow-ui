@@ -8,7 +8,7 @@ const DashboardMenu = () => {
 
     try {
         const response = await axios.post(
-        'https://bettnow.onrender.com/api/logout',
+        'https://api.bettnow.org/api/logout',
         {},
         {
             headers: {

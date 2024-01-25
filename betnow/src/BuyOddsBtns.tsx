@@ -19,7 +19,7 @@ const BuyOddsBtns = () => {
 
     const BuyFiveOdds = async () => {
         try {
-            const response = await axios.get('https://bettnow.onrender.com/api/buyfiveodds', {
+            const response = await axios.get('https://api.bettnow.org/api/buyfiveodds', {
                 withCredentials: true
             });
             if (response.data.message) return setOddsAvailable(false)
@@ -39,7 +39,7 @@ const BuyOddsBtns = () => {
 
     const BuyTwoOdds = async () => {
         try {
-            const response = await axios.get('https://bettnow.onrender.com/api/buytwoodds', {
+            const response = await axios.get('https://api.bettnow.org/api/buytwoodds', {
                 withCredentials: true
             });
             console.log(response)
@@ -58,7 +58,7 @@ const BuyOddsBtns = () => {
 
     const BuySevenOdds = async () => {
         try {
-            const response = await axios.get('https://bettnow.onrender.com/api/buysevenodds', {
+            const response = await axios.get('https://api.bettnow.org/api/buysevenodds', {
                 withCredentials: true
             });
             console.log(response)

@@ -23,7 +23,7 @@ const GetTwoOddsPage = () => {
     const getAllPhotos = async () => {
         const urlParams = new URLSearchParams(window.location.href);
         const referenceValue = urlParams.get("reference");
-        let url = `https://bettnow.onrender.com/api/twoodds`
+        let url = `https://api.bettnow.org/api/twoodds`
         if (referenceValue) {
             url = `${url}?reference=${referenceValue}`
         }
@@ -49,7 +49,7 @@ const GetTwoOddsPage = () => {
             const requestData = {
                 url: imageUrl,
             };
-            const response = await axios.delete("https://bettnow.onrender.com/api/removetwoodds", {
+            const response = await axios.delete("https://api.bettnow.org/api/removetwoodds", {
                 data: requestData,
                 headers: {
                     'Content-Type': 'application/json',

@@ -41,7 +41,7 @@ const Uploadform = () => {
     console.log(formData)
 
     try {
-      await axios.post('https://bettnow.vercel.app/api/upload', formData, {
+      await axios.post('https://api.bettnow.org/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
