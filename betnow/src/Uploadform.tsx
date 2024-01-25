@@ -4,8 +4,9 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 const Uploadform = () => {
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState<File | null>(null);
     const [oddType, setOddType] = useState("");
 
     const handleUploadImage = () => {
@@ -29,7 +30,11 @@ const Uploadform = () => {
     }
 
     const handleUpload = async () => {
-      console.log(image)
+     if (!image) {
+      toast.error('Please select an image');
+      return;
+    }
+
     const formData = new FormData();
     formData.append('file', image);
     formData.append('oddType', oddType)

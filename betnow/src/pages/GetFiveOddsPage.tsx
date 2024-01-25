@@ -4,15 +4,24 @@ import "./styles/getOdds.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 
+type ApiResponse = {
+  success: {
+    _id: string;
+    image: {
+      imageUrl: string;
+    };
+  }[];
+  user: string;
+};
 
 const GetFiveOddsPage = () => {
-    const [allPhotos, setAllPhotos] = useState([]);
+    const [allPhotos, setAllPhotos] = useState<ApiResponse["success"]>([]);
     const [user, setUser] = useState("");
     const [isDeleted, setIsDeleted] = useState(false);
     
     const getAllPhotos = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/fiveodds", {
+            await axios.get("http://localhost:5000/api/fiveodds", {
                 withCredentials: true
             }).then((res) => {
                 if(res.data.user) {

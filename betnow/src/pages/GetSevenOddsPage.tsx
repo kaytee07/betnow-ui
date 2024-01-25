@@ -3,8 +3,19 @@ import { useEffect, useState } from "react";
 import "./styles/getOdds.css"
 import { Link } from "react-router-dom";
 
+type ApiResponse = {
+  success: {
+    _id: string;
+    image: {
+      imageUrl: string;
+    };
+  }[];
+  user: string;
+};
+
+
 const GetSevenOddsPage = () => {
-    const [allPhotos, setAllPhotos] = useState([]);
+    const [allPhotos, setAllPhotos] = useState<ApiResponse["success"]>([]);
     const [user, setUser] = useState("");
     const [isDeleted, setIsDeleted] = useState(false);
     
@@ -19,7 +30,7 @@ const GetSevenOddsPage = () => {
              url = `http://localhost:5000/api/sevenodds?reference=${referenceValue}`
         }
         try {
-            const response = await axios.get(url, {
+            await axios.get(url, {
                 withCredentials: true
             }).then((res) => {
                 if(res.data.user) {

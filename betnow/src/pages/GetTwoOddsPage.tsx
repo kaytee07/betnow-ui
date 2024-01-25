@@ -2,10 +2,20 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./styles/getOdds.css";
 import { Link } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+
+type ApiResponse = {
+  success: {
+    _id: string;
+    image: {
+      imageUrl: string;
+    };
+  }[];
+  user: string;
+};
+
 
 const GetTwoOddsPage = () => {
-    const [allPhotos, setAllPhotos] = useState([]);
+    const [allPhotos, setAllPhotos] = useState<ApiResponse["success"]>([]);
     const [user, setUser] = useState("");
     const [isDeleted, setIsDeleted] = useState(false);
 
