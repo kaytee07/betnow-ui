@@ -30,14 +30,14 @@ const SignInForm = () => {
         }
 
         try {
-            const response = await axios.post('https://bettnow.onrender.com/api/login', data, {
+            const response = await axios.post('https://api.bettnow.org/api/login', data, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 withCredentials: true
             });
             console.log(response.data)
-            //window.location.href = response.data
+            window.location.href = response.data
         } catch (err) {
             console.error(err);
         }
