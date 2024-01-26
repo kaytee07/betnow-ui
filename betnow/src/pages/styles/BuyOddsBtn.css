@@ -16,3 +16,10 @@
     width: 100%;
     display: flex;
 }
+
+@media (max-width: 767px) {
+    .buy-option {
+        width: 74px;
+        background-color: #217843;
+    }
+}

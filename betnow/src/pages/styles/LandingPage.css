@@ -50,9 +50,10 @@
     }
 
     .main-text-btn {
-        width: 100vw;
+        width: 71vw;
         height: 70vh;
         padding: 10px 10px;
+        margin: 88px auto;
     }
 
     .header header {
@@ -61,7 +62,7 @@
 
     .main-text-btn h1 {
         font-family: 'Roboto', sans-serif;
-        font-size: 40px;
+        font-size: 30px;
         color: #ffffff;
     }
 
@@ -69,6 +70,12 @@
         width: 100% !important;
         display: flex !important;
     }   
+
+    .main-text-btn h1 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 27px;
+        color: #ffffff;
+    }
 
 }
 
