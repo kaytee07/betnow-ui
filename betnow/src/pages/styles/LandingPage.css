@@ -54,6 +54,7 @@
         height: 70vh;
         padding: 10px 10px;
         margin: 88px auto;
+        display: block;
     }
 
     .header header {
