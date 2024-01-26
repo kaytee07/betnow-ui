@@ -63,7 +63,7 @@
 
     .main-text-btn h1 {
         font-family: 'Roboto', sans-serif;
-        font-size: 30px;
+        font-size: 34px;
         color: #ffffff;
     }
 
@@ -78,6 +78,16 @@
         color: #ffffff;
     }
 
+}
+
+
+@media (max-width: 414px) {
+    .main-text-btn {
+            width: 82vw;
+            height: 70vh;
+            padding: 5px;
+            margin: 165px auto;
+        }
 }
 
 

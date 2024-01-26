@@ -23,3 +23,11 @@
         background-color: #217843;
     }
 }
+
+@media (max-width: 414px) {
+    .buy-option {
+            width: 96px;
+            background-color: #217843;
+            font-size: large;
+        }
+}
