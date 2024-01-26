@@ -74,7 +74,7 @@ const SignUpForm = () => {
                     <input onChange={handleFirstNameChange} id="firstname" value={firstName}/>
                 </div>
                 <div className="last-name">
-                    <label htmlFor="lastname">first name</label>
+                    <label htmlFor="lastname">last name</label>
                     <input onChange={handleLastNameChange} id="lastname" value={lastName}/>
                 </div>
                 <div className="email">
