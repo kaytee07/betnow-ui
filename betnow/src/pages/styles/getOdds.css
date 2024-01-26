@@ -24,3 +24,10 @@ div.ticket button {
     margin: 0px auto;
     cursor: pointer;
 }
+
+@media (max-width: 767px) {
+    .ticket {
+        width: 300px;
+        height: 300px;
+    }
+}
