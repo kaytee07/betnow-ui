@@ -88,6 +88,12 @@
             padding: 5px;
             margin: 165px auto;
         }
+
+        .main-text-btn h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 34px;
+            color: #ffffff;
+        }
 }
 
 
