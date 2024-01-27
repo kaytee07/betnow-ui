@@ -8,7 +8,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const BuyOddsBtns = () => {
-    const [redirectUrl, setRedirectUrl] = useState(null);
     const [oddsAvailable, setOddsAvailable] = useState(true);
 
     const handleNoOddsAvailable = () => {
@@ -25,7 +24,7 @@ const BuyOddsBtns = () => {
             if (response.data.message) return setOddsAvailable(false)
             if (response.data.authorization_url) {
                 const { authorization_url } = response.data;
-                setRedirectUrl(authorization_url);
+                window.open(authorization_url, "_blank");
             } else {
                 console.error({error: "authorization url not present"})
             }
@@ -46,7 +45,7 @@ const BuyOddsBtns = () => {
             if (response.data.message) return setOddsAvailable(false);
             if (response.data.authorization_url) {
                 const { authorization_url } = response.data;
-                setRedirectUrl(authorization_url);
+                window.open(authorization_url, "_blank");
             } else {
                 console.error({error: "authorization url not present"})
             }
@@ -65,21 +64,17 @@ const BuyOddsBtns = () => {
             if (response.data.message) return setOddsAvailable(false);
             if (response.data.authorization_url) {
                 const { authorization_url } = response.data;
-                setRedirectUrl(authorization_url);
+                window.open(authorization_url, "_blank");
             } else {
                 console.error({error: "authorization url not present"})
             }
             
         } catch (err) {
+            console.log(err)
             console.error(err)
         }
     }
 
-    useEffect (() => {
-         if (redirectUrl) {
-            window.open(redirectUrl, "_blank");
-        }
-    }, [redirectUrl]);
 
     useEffect(() => {
         if (!oddsAvailable) handleNoOddsAvailable();
