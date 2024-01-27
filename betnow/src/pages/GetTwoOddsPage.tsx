@@ -23,9 +23,11 @@ const GetTwoOddsPage = () => {
     const getAllPhotos = async () => {
         const urlParams = new URLSearchParams(window.location.href);
         const referenceValue = urlParams.get("reference");
-        let url = `https://api.bettnow.org/api/twoodds`
-        if (referenceValue) {
-            url = `${url}?reference=${referenceValue}`
+        let url = "";
+         if (!referenceValue) {
+             url = `https://happy-pocket-seal.cyclic.app/api/twoodds`
+        } else {
+             url = `https://happy-pocket-seal.cyclic.app/api/twoodds?reference=${referenceValue}`
         }
 
         try {
@@ -49,7 +51,7 @@ const GetTwoOddsPage = () => {
             const requestData = {
                 url: imageUrl,
             };
-            const response = await axios.delete("https://api.bettnow.org/api/removetwoodds", {
+            const response = await axios.delete("https://happy-pocket-seal.cyclic.app/api/removetwoodds", {
                 data: requestData,
                 headers: {
                     'Content-Type': 'application/json',

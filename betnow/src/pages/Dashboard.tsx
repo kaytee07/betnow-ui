@@ -21,7 +21,7 @@ const Dashboard = () => {
   useEffect(() => {
     const isAuthenticated = async () => {
       try {
-        const response = await axios.get('https://api.bettnow.org/api/auth', {
+        const response = await axios.get('https://happy-pocket-seal.cyclic.app/api/auth', {
           withCredentials: true
         });
 

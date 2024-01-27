@@ -25,14 +25,15 @@ const GetSevenOddsPage = () => {
         const referenceValue = urlParams.get("reference");
         let url = "";
         if (!referenceValue) {
-             url = `https://api.bettnow.org/api/sevenodds`
+             url = `https://happy-pocket-seal.cyclic.app/api/sevenodds`
         } else {
-             url = `https://api.bettnow.org/api/sevenodds?reference=${referenceValue}`
+             url = `https://happy-pocket-seal.cyclic.app/api/sevenodds?reference=${referenceValue}`
         }
         try {
             await axios.get(url, {
                 withCredentials: true
             }).then((res) => {
+                console.log(res)
                 if(res.data.user) {
                     setUser(res.data.user)
                     setAllPhotos(res.data.success)
@@ -49,7 +50,7 @@ const GetSevenOddsPage = () => {
             const requestData = {
                 url: imageUrl,
             };
-            const response = await axios.delete("https://api.bettnow.org/api/removesevenodds", {
+            const response = await axios.delete("https://happy-pocket-seal.cyclic.app/api/removesevenodds", {
                 data: requestData,
                 headers: {
                     'Content-Type': 'application/json',

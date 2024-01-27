@@ -49,7 +49,7 @@ const SignUpForm = () => {
         }
         
         try {
-            await axios.post('https://api.bettnow.org/api/signup', data, {
+            await axios.post('https://happy-pocket-seal.cyclic.app/api/signup', data, {
                  headers: {
                     'Content-Type': 'application/json'
                 }

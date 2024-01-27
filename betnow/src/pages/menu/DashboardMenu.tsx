@@ -8,7 +8,7 @@ const DashboardMenu = () => {
 
     try {
         const response = await axios.post(
-        'https://api.bettnow.org/api/logout',
+        'https://happy-pocket-seal.cyclic.app/api/logout',
         {},
         {
             headers: {

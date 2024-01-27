@@ -5,15 +5,15 @@ import axios from "axios";
 const GetOddsBtn = () => {
 
     const getFiveOdds = async () => {
-        await axios.get('https://api.bettnow.org/api/fiveodds');
+        await axios.get('http://localhost:5000/api/fiveodds');
     }
 
     const getTwoOdds = async () => {
-        await axios.get('https://api.bettnow.org/api/twoodds');
+        await axios.get('http://localhost:5000/api/twoodds');
     }
 
     const getSevenOdds = async () => {
-        await axios.get('https://api.bettnow.org/api/sevenodds');
+        await axios.get('https://happy-pocket-seal.cyclic.app/api/sevenodds');
     }
 
     return (

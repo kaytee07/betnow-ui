@@ -21,7 +21,7 @@ const GetFiveOddsPage = () => {
     
     const getAllPhotos = async () => {
         try {
-            await axios.get("https://api.bettnow.org/api/fiveodds", {
+            await axios.get("https://happy-pocket-seal.cyclic.app/api/fiveodds", {
                 withCredentials: true
             }).then((res) => {
                 if(res.data.user) {
@@ -41,7 +41,7 @@ const GetFiveOddsPage = () => {
             const requestData = {
                 url: imageUrl,
             };
-            const response = await axios.delete("https://api.bettnow.org/api/removefiveodds", {
+            const response = await axios.delete("https://happy-pocket-seal.cyclic.app/api/removefiveodds", {
                 data: requestData,
                 headers: {
                     'Content-Type': 'application/json',
