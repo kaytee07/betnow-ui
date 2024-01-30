@@ -9,7 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const BuyOddsBtns = () => {
     const [oddsAvailable, setOddsAvailable] = useState(true);
-    const windowReference = window.open('about:blank', '_blank');
+    const windowReference: Window | null = window.open('about:blank', '_blank');
+    
 
     const handleNoOddsAvailable = () => {
         oddsAvailable
@@ -77,7 +78,7 @@ const BuyOddsBtns = () => {
             if (response.data.message) return setOddsAvailable(false);
             if (response.data.authorization_url) {
                 const { authorization_url } = response.data;
-                windowReference.location.href = authorization_url;
+                if (windowReference) windowReference.location.href = authorization_url
             } else {
                 console.error({error: "authorization url not present"})
             }
