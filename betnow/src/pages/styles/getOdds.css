@@ -25,7 +25,7 @@ div.ticket button {
     cursor: pointer;
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .ticket {
         display: flex;
         flex-direction: column;
@@ -33,4 +33,4 @@ div.ticket button {
         width: 300px;
         height: 320px;
     }
-}
+} */

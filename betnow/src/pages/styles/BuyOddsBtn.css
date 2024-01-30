@@ -19,15 +19,28 @@
 
 @media (max-width: 767px) {
     .buy-option {
-        width: 74px;
+        width: 100%;
         background-color: #217843;
+        margin-right: 0px;
+    }
+
+    .odds {
+        width: 28%;
+    }
+
+    .two-odds {
+        margin-right: 30px;
+    }
+
+    .five-odds {
+        margin-right: 30px;
     }
 }
 
 @media (max-width: 414px) {
-    .buy-option {
+    /* .buy-option {
             width: 96px;
             background-color: #217843;
             font-size: large;
-        }
+        } */
 }

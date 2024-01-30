@@ -50,7 +50,7 @@
     }
 
     .main-text-btn {
-        width: 71vw;
+        width: 83%;
         height: 70vh;
         padding: 10px 10px;
         margin: 88px auto;
@@ -74,14 +74,14 @@
 
     .main-text-btn h1 {
         font-family: 'Roboto', sans-serif;
-        font-size: 27px;
+        font-size: 33px;
         color: #ffffff;
     }
 
 }
 
 
-@media (max-width: 414px) {
+/* @media (max-width: 414px) {
     .main-text-btn {
             width: 82vw;
             height: 70vh;
@@ -94,7 +94,7 @@
             font-size: 34px;
             color: #ffffff;
         }
-}
+} */
 
 
 

@@ -84,17 +84,17 @@ const BuyOddsBtns = () => {
     return (
         <div className="choose_odds">
             <ToastContainer/>
-            <div className="two-odds"> 
+            <div className="two-odds odds"> 
                 <h1></h1>
                 <p></p>
                 <button className="buy-option" onClick={BuyTwoOdds}>two odds</button>
             </div>
-            <div className="five-odds">
+            <div className="five-odds odds">
                 <h1></h1>
                 <p></p>
                 <button className="buy-option" onClick={BuyFiveOdds}>five odds</button>
             </div>
-            <div className="seven-odds">
+            <div className="seven-odds odds">
                  <h1></h1>
                  <p></p>
                   <button className="buy-option" onClick={BuySevenOdds}>seven odds</button>
