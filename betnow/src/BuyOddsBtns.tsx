@@ -17,9 +17,13 @@ const BuyOddsBtns = () => {
     
 
     const BuyFiveOdds = async () => {
+        const cacheBuster = Math.random();
         try {
             const response = await axios.get('https://happy-pocket-seal.cyclic.app/api/buyfiveodds', {
-                withCredentials: true
+                withCredentials: true,
+                params: {
+                    _cacheBuster: cacheBuster
+                }
             });
             if (response.data.message) return setOddsAvailable(false)
             if (response.data.authorization_url) {
@@ -37,9 +41,13 @@ const BuyOddsBtns = () => {
 
 
     const BuyTwoOdds = async () => {
+        const cacheBuster = Math.random();
         try {
             const response = await axios.get('https://happy-pocket-seal.cyclic.app/api/buytwoodds', {
-                withCredentials: true
+                withCredentials: true,
+                params: {
+                    _cacheBuster: cacheBuster
+                }
             });
             console.log(response)
             if (response.data.message) return setOddsAvailable(false);
@@ -56,9 +64,13 @@ const BuyOddsBtns = () => {
     }
 
     const BuySevenOdds = async () => {
+        const cacheBuster = Math.random();
         try {
             const response = await axios.get('https://happy-pocket-seal.cyclic.app/api/buysevenodds', {
-                withCredentials: true
+                withCredentials: true,
+                params: {
+                    _cacheBuster: cacheBuster
+                }
             });
             console.log(response)
             if (response.data.message) return setOddsAvailable(false);
