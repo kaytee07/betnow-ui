@@ -5,11 +5,11 @@ import axios from "axios";
 const GetOddsBtn = () => {
 
     const getFiveOdds = async () => {
-        await axios.get('http://localhost:5000/api/fiveodds');
+        await axios.get('https://happy-pocket-seal.cyclic.app/fiveodds');
     }
 
     const getTwoOdds = async () => {
-        await axios.get('http://localhost:5000/api/twoodds');
+        await axios.get('https://happy-pocket-seal.cyclic.app/api/twoodds');
     }
 
     const getSevenOdds = async () => {
